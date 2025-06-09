@@ -1,0 +1,539 @@
+/* -------------------------
+    Base Reset and Body Style
+-------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Updated Body Background and Text Color */
+body {
+    background-color: #0d0d1a; /* Very dark blue-purple, nearly black */
+    color: #e0e0e0; /* Soft off-white for main text */
+    font-family: 'Poppins', sans-serif;
+    /* Added overflow-y to handle scrolling for content outside of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrollbar unless truly needed */
+}
+
+/* -------------------------
+    Navbar Styling
+-------------------------- */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: #1a1a2e; /* Slightly lighter dark shade for navbar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    position: sticky; /* Make navbar sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other content */
+    width: 100%; /* Ensure navbar spans full width */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0; /* Off-white for nav links */
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Updated Nav Link Hover Color */
+nav ul li a:hover {
+    color: #00e6e6; /* Vibrant Teal/Cyan accent */
+    font-size: 1.01rem;
+}
+
+.left {
+    font-size: 1.5rem;
+    color: #e0e0e0; /* Keep branding clear */
+}
+
+/* -------------------------
+    Hero Section (Home Page)
+-------------------------- */
+.firstSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Removed fixed margin-top to prevent space above viewport.
+       We'll rely on min-height to fill the screen. */
+    padding: 0 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Add gap for spacing */
+    
+    /* Key changes for full viewport height */
+    min-height: calc(100vh - 80px); /* 100vh (viewport height) minus navbar height */
+    margin: 0; /* Remove any default margins that might cause issues */
+    width: 100%; /* Ensure it takes full width */
+    /* Vertically center content if height allows */
+    align-content: center;
+    box-sizing: border-box; /* Crucial: ensures padding is included in height calculation */
+}
+
+.firstSection > div {
+    width: 45%; /* Adjusted width for better spacing */
+    min-width: 300px; /* Minimum width to prevent extreme squeezing */
+}
+
+.leftSection {
+    font-size: 2.8rem;
+    line-height: 1.3; /* Improved line height for readability */
+}
+
+.leftSection .buttons {
+    padding: 35px 0;
+    display: flex; /* Use flexbox for button alignment */
+    gap: 15px; /* Spacing between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+/* Updated Button Styles */
+.leftSection .btn {
+    padding: 12px 25px; /* Increased padding for better click area */
+    background-color: #00e6e6; /* Vibrant Teal/Cyan for primary action */
+    color: #0d0d1a; /* Dark text on bright button */
+    border: 2px solid #00e6e6;
+    border-radius: 8px; /* Slightly more rounded */
+    font-size: 16px; /* Slightly larger font */
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 230, 230, 0.4); /* Subtle glow */
+}
+
+.leftSection .btn a {
+    color: inherit; /* Inherit color from parent button */
+    text-decoration: none;
+}
+
+/* Updated Button Hover */
+.leftSection .btn:hover {
+    background-color: #00b3b3; /* Darker teal on hover */
+    border-color: #00b3b3;
+    color: #e0e0e0; /* Lighter text on hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+    box-shadow: 0 6px 20px rgba(0, 230, 230, 0.6);
+}
+
+.RightSection img {
+    width: 80%;
+    max-width: 400px; /* Constrain image size on large screens */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center image within its div */
+    border-radius: 10px; /* Soften edges */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* -------------------------
+    Highlighted Text
+-------------------------- */
+/* Updated Highlighted Text Color */
+.name,
+#element {
+    color: #00e6e6; /* Consistent Teal/Cyan accent */
+    font-weight: 700; /* Make important text stand out more */
+}
+
+#element {
+    font-size: 2.8rem;
+}
+
+/* ===== About Section Styles - Dark Modern ===== */
+.about-section {
+    padding: 60px 20px; /* Increased padding */
+    background: linear-gradient(135deg, #1a1a2e, #0d0d1a); /* Subtle gradient for depth */
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    color: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    max-width: 1100px;
+    margin: 80px auto; /* Increased top/bottom margin for clear separation */
+}
+
+/* Updated Section Title Color and Shadow */
+.about-section .section-title {
+    text-align: center;
+    font-size: 3rem; /* Slightly larger for impact */
+    margin-bottom: 50px;
+    color: #00e6e6; /* Vibrant Teal/Cyan */
+    text-shadow: 0 0 12px rgba(0, 230, 230, 0.7); /* Stronger glow */
+    font-weight: 700;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1 1 400px;
+    max-width: 520px;
+    font-size: 1.15rem;
+    line-height: 1.7; /* Improved line height */
+    color: #c0c0c0; /* Slightly darker text for contrast on lighter background */
+    text-shadow: none; /* Remove text shadow as it can hinder readability */
+}
+
+/* Updated Sub-heading Color and Border */
+.about-text h3 {
+    margin-top: 40px; /* More space above sub-headings */
+    margin-bottom: 15px;
+    color: #00e6e6; /* Vibrant Teal/Cyan */
+    font-size: 2rem; /* Consistent large size */
+    border-bottom: 2px solid rgba(0, 230, 230, 0.5); /* Thinner, softer border */
+    padding-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Updated List Item Color and Bullet */
+.about-text ul li {
+    margin: 12px 0; /* More vertical spacing */
+    padding-left: 30px; /* More space for the bullet */
+    position: relative;
+    color: #d0d0d0; /* Slightly lighter for list items */
+    font-weight: 400; /* Normal weight for readability */
+    font-size: 1.05rem; /* Slightly larger for lists */
+}
+
+.about-text ul li::before {
+    content: '‣'; /* Modern triangle bullet, more subtle than '▹' */
+    position: absolute;
+    left: 0;
+    color: #00e6e6; /* Vibrant Teal/Cyan bullet */
+    font-weight: bold;
+    font-size: 1.5rem; /* Larger bullet for emphasis */
+    line-height: 0.9;
+    top: 5px; /* Adjust vertical alignment */
+}
+
+/* ===== Project section ===== */
+.projects-section {
+    padding: 60px 20px;
+    background-color: #1a1a2e; /* Consistent with navbar background */
+    color: #f0f0f0;
+    max-width: 1100px;
+    margin: 80px auto; /* Increased top/bottom margin for clear separation */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Updated Section Title Color and Shadow */
+.projects-section .section-title {
+    text-align: center;
+    font-size: 3rem; /* Consistent with About section title */
+    color: #00e6e6; /* Vibrant Teal/Cyan */
+    margin-bottom: 40px;
+    text-shadow: 0 0 12px rgba(0, 230, 230, 0.7);
+    font-weight: 700;
+}
+
+.project-card {
+    margin-bottom: 40px;
+    padding: 30px; /* Increased padding */
+    background-color: #0d0d1a; /* Darker background for project card */
+    border-radius: 12px; /* Slightly more rounded */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    border: 1px solid rgba(0, 230, 230, 0.1); /* Subtle border matching accent */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Updated Project Title Color */
+.project-title {
+    font-size: 2rem; /* Larger for better hierarchy */
+    color: #00e6e6; /* Vibrant Teal/Cyan */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.project-description {
+    font-size: 1.05rem; /* Slightly larger text */
+    margin-bottom: 25px; /* More space below description */
+    color: #c0c0c0; /* Softer text color */
+    line-height: 1.6;
+}
+
+.project-tech strong,
+.project-working strong,
+.project-sql strong {
+    color: #00e6e6; /* Highlight these labels */
+    font-weight: 600;
+    display: block; /* Ensure they take their own line */
+    margin-bottom: 10px; /* Space below label */
+    font-size: 1.1rem;
+}
+
+.project-tech ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex; /* Display tech as tags */
+    flex-wrap: wrap;
+    gap: 10px; /* Spacing between tags */
+    margin-bottom: 25px;
+}
+
+.project-tech ul li {
+    background-color: #2a2a40; /* Darker tag background */
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    color: #a0a0a0; /* Lighter text for tags */
+    border: 1px solid rgba(0, 230, 230, 0.2);
+}
+
+
+.project-working p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #c0c0c0;
+    margin-bottom: 25px;
+}
+
+/* Image Grid for Projects */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid for images */
+    gap: 15px; /* Spacing between images */
+    margin-top: 15px;
+    padding-bottom: 10px; /* Ensure space for scrollbar if overflow */
+    overflow-x: auto; /* Enable horizontal scroll if images are too many/large */
+}
+
+.image-grid img {
+    width: 100%;
+    height: 190px; /* Consistent height for images */
+    object-fit: cover; /* Crop images to fit, maintaining aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03); /* Subtle zoom on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+/* -------------------------
+    Footer Section
+-------------------------- */
+footer {
+    background-color: #0a0a1a; /* Even darker footer */
+    color: #fff;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-rights {
+    color: #808080; /* Softer grey for copyright */
+    font-size: 0.9rem;
+    margin-top: 30px; /* More space above copyright */
+    border-top: 1px solid #2a2a40; /* Softer border */
+    padding-top: 20px;
+}
+
+/* -------------------------
+    Contact Section in Footer
+-------------------------- */
+.contact-section h2 {
+    color: #00e6e6; /* Accent color for contact title */
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Increased gap between icons */
+    margin-top: 15px;
+}
+
+.contact-icons .icon {
+    font-size: 1.6rem; /* Slightly larger icons */
+    padding: 15px; /* More padding for larger click area */
+    background-color: #1a1a2e; /* Darker background for icons */
+    border-radius: 50%;
+    color: #00e6e6; /* Accent color for icons themselves */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Specific hover effects - keeping them but adjusting to new theme if needed */
+.contact-icons .icon:hover {
+    transform: scale(1.2);
+    /* No generic background-color change here, let specific ones handle it */
+}
+
+/* Keep the specific hover effects as they are good for brand recognition */
+.contact-icons .whatsapp:hover {
+    background-color: #25d366;
+    box-shadow: 0 3px 15px rgba(37, 211, 102, 0.6);
+    color: white; /* Ensure good contrast on brand color */
+}
+
+.contact-icons .email:hover {
+    background-color: #ea4335;
+    box-shadow: 0 3px 15px rgba(234, 67, 53, 0.6);
+    color: white;
+}
+
+.contact-icons .phone:hover {
+    background-color: #34b7f1;
+    box-shadow: 0 3px 15px rgba(52, 183, 241, 0.6);
+    color: white;
+}
+
+.contact-icons .instagram:hover {
+    background-color: #e1306c;
+    box-shadow: 0 3px 15px rgba(225, 48, 108, 0.6);
+    color: white;
+}
+
+.footer-rights {
+    text-align: center;
+    color: #bbb;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* -------------------------
+    Responsive Styles
+-------------------------- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin-top: 15px; /* Space below title */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .firstSection {
+        flex-direction: column-reverse; /* Image above text on mobile */
+        text-align: center;
+        padding: 40px 20px;
+        min-height: auto; /* Allow height to adjust on smaller screens */
+        margin: 0; /* Remove top/bottom margin for mobile */
+    }
+
+    .firstSection > div {
+        width: 100%;
+    }
+
+    .leftSection {
+        font-size: 2rem;
+    }
+
+    .RightSection img {
+        width: 90%; /* Larger image on mobile */
+        max-width: 300px; /* Limit max size */
+    }
+
+    .leftSection .buttons {
+        justify-content: center; /* Center buttons on mobile */
+    }
+
+    .leftSection .btn {
+        margin: 10px 5px; /* Adjust margin for mobile */
+    }
+
+    .about-section .section-title,
+    .projects-section .section-title {
+        font-size: 2.5rem; /* Smaller titles on mobile */
+    }
+
+    .about-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-section {
+        text-align: center;
+    }
+
+    .contact-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .leftSection,
+    #element {
+        font-size: 1.5rem;
+    }
+
+    .leftSection .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .left {
+        font-size: 1.2rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .footer-rights {
+        font-size: 0.8rem;
+    }
+
+    .about-section .section-title,
+    .projects-section .section-title {
+        font-size: 2rem; /* Even smaller titles on very small screens */
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller grid items for small screens */
+    }
+}
